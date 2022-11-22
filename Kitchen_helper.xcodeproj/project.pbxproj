@@ -11,19 +11,19 @@
 		05B69869291E4B8700233DBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B69868291E4B8700233DBA /* SceneDelegate.swift */; };
 		05B6986B291E4B8700233DBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B6986A291E4B8700233DBA /* ViewController.swift */; };
 		05B6986E291E4B8700233DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B6986C291E4B8700233DBA /* Main.storyboard */; };
-		05B69870291E4B8800233DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B6986F291E4B8800233DBA /* Assets.xcassets */; };
 		05B69873291E4B8800233DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B69871291E4B8800233DBA /* LaunchScreen.storyboard */; };
+		05EACC91292CCDD90042A1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05EACC90292CCDD90042A1EA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05B69863291E4B8700233DBA /* Kitchen helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kitchen helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05B69863291E4B8700233DBA /* Kitchen_helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitchen_helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B69866291E4B8700233DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05B69868291E4B8700233DBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		05B6986A291E4B8700233DBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05B6986D291E4B8700233DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		05B6986F291E4B8800233DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05B69872291E4B8800233DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05B69874291E4B8800233DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05EACC90292CCDD90042A1EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,7 @@
 		05B6985A291E4B8700233DBA = {
 			isa = PBXGroup;
 			children = (
-				05B69865291E4B8700233DBA /* Kitchen helper */,
+				05B69865291E4B8700233DBA /* Kitchen_helper */,
 				05B69864291E4B8700233DBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +48,31 @@
 		05B69864291E4B8700233DBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05B69863291E4B8700233DBA /* Kitchen helper.app */,
+				05B69863291E4B8700233DBA /* Kitchen_helper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		05B69865291E4B8700233DBA /* Kitchen helper */ = {
+		05B69865291E4B8700233DBA /* Kitchen_helper */ = {
 			isa = PBXGroup;
 			children = (
 				05B69866291E4B8700233DBA /* AppDelegate.swift */,
 				05B69868291E4B8700233DBA /* SceneDelegate.swift */,
 				05B6986A291E4B8700233DBA /* ViewController.swift */,
+				05EACC90292CCDD90042A1EA /* Assets.xcassets */,
 				05B6986C291E4B8700233DBA /* Main.storyboard */,
-				05B6986F291E4B8800233DBA /* Assets.xcassets */,
 				05B69871291E4B8800233DBA /* LaunchScreen.storyboard */,
 				05B69874291E4B8800233DBA /* Info.plist */,
 			);
-			path = "Kitchen helper";
+			path = Kitchen_helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		05B69862291E4B8700233DBA /* Kitchen helper */ = {
+		05B69862291E4B8700233DBA /* Kitchen_helper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05B69877291E4B8800233DBA /* Build configuration list for PBXNativeTarget "Kitchen helper" */;
+			buildConfigurationList = 05B69877291E4B8800233DBA /* Build configuration list for PBXNativeTarget "Kitchen_helper" */;
 			buildPhases = (
 				05B6985F291E4B8700233DBA /* Sources */,
 				05B69860291E4B8700233DBA /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = "Kitchen helper";
+			name = Kitchen_helper;
 			productName = "Kitchen helper";
-			productReference = 05B69863291E4B8700233DBA /* Kitchen helper.app */;
+			productReference = 05B69863291E4B8700233DBA /* Kitchen_helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 05B6985E291E4B8700233DBA /* Build configuration list for PBXProject "Kitchen helper" */;
+			buildConfigurationList = 05B6985E291E4B8700233DBA /* Build configuration list for PBXProject "Kitchen_helper" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				05B69862291E4B8700233DBA /* Kitchen helper */,
+				05B69862291E4B8700233DBA /* Kitchen_helper */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B69873291E4B8800233DBA /* LaunchScreen.storyboard in Resources */,
-				05B69870291E4B8800233DBA /* Assets.xcassets in Resources */,
+				05EACC91292CCDD90042A1EA /* Assets.xcassets in Resources */,
 				05B6986E291E4B8700233DBA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +289,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CUQARVJRL7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Kitchen helper/Info.plist";
+				INFOPLIST_FILE = Kitchen_helper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +317,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CUQARVJRL7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Kitchen helper/Info.plist";
+				INFOPLIST_FILE = Kitchen_helper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -339,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05B6985E291E4B8700233DBA /* Build configuration list for PBXProject "Kitchen helper" */ = {
+		05B6985E291E4B8700233DBA /* Build configuration list for PBXProject "Kitchen_helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				05B69875291E4B8800233DBA /* Debug */,
@@ -348,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		05B69877291E4B8800233DBA /* Build configuration list for PBXNativeTarget "Kitchen helper" */ = {
+		05B69877291E4B8800233DBA /* Build configuration list for PBXNativeTarget "Kitchen_helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				05B69878291E4B8800233DBA /* Debug */,
