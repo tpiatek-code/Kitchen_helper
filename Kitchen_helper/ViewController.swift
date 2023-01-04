@@ -3,77 +3,57 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    var food:[(name: String, value: Double)] = [
-        ("flour", 0.68),
-        ("potato flour", 0.72),
-        ("sugar", 0.88),
-        ("icing sugar", 0.68),
-        ("salt", 1.2),
-        ("butter", 0.96),
-        ("cocoa", 0.4),
-        ("milk", 1.04),
-        ("honey", 1.44)
-    ]
-    
-    let grams = ["10g", "20g", "30g", "40g", "50g", "60g", "70g", "80g", "90g", "100g", "110g", "120g", "130g", "140g", "150g", "160g", "170g", "180g", "190g", "200g", "210g", "220g", "230g", "240g", "250g", "300g", "400g", "500g"]
-
-    let cup:[(name: String, value: Double)] = [
-        ("tea spoon", 5.0),
-        ("table spoon", 15.0),
-        ("250ml cup", 250.0),
-        ("330ml cup", 330.0)
-    ]
-
+    var data = Data()
     let pickerFood = UIPickerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        pickerFood.overrideUserInterfaceStyle = .dark
-        pickerFood.delegate = self
-        pickerFood.dataSource = self
-        
-        //Top Image
+        configurePickerView()
         setupImage()
-        
-        //Picker
         setupPickerFood()
-        
-        //StackView
-        stackViewBottom()
-        
+        stackViewFundament()
     }
     
     
     //MARK: - Picker Food
     
+    
+    func configurePickerView() {
+        pickerFood.overrideUserInterfaceStyle = .dark
+        pickerFood.delegate = self
+        pickerFood.dataSource = self
+    }
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
-            return food.count
+            return data.food.count
         case 1:
-            return grams.count
+            return data.grams.count
         default:
-            return cup.count
+            return data.cup.count
         }
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
-            return food[row].name
+            return data.food[row].name
         case 1:
-            let stringGrams = String(grams[row])
+            let stringGrams = String(data.grams[row])
             return stringGrams
         default:
-            return cup[row].name
+            return data.cup[row].name
+        }
     }
-        
-    }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let row1 = pickerView.selectedRow(inComponent: 0)
@@ -111,9 +91,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     func calculation(row1: Int, row2: Int, row3: Int){
-        let a = food[row1].value
-        let b = grams[row2]
-        let c = cup[row3].value
+        let a = data.food[row1].value
+        let b = data.grams[row2]
+        let c = data.cup[row3].value
         let dropB = Double(b.dropLast()) ?? 0.0
         let d = (dropB / c) / a
         var x = Double(round(10 * d) / 10)
@@ -172,8 +152,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
 
     
-    
     //MARK: - Top Image
+    
     
     func setupImage() {
         view.addSubview(imageTop)
@@ -196,30 +176,27 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }()
     
     
+    //MARK: - StackView
     
-    //MARK: - StackView Bottom
     
-    func stackViewBottom() {
-        let stackView = UIStackView(arrangedSubviews: [
-            labelCalc,
-            imageSG])
-
-        view.addSubview(stackView)
-        stackView.axis = .horizontal
-        stackView.distribution = .equalCentering
-        stackView.spacing = 1
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-
+    func stackViewFundament() {
+        let stackViewFund = UIStackView(arrangedSubviews: [labelCalc, imageSG])
+        view.addSubview(stackViewFund)
+        stackViewFund.translatesAutoresizingMaskIntoConstraints = false
+        stackViewFund.axis = .horizontal
+        stackViewFund.distribution = .fillEqually
+        
         NSLayoutConstraint.activate([
-            stackView.heightAnchor.constraint(equalToConstant: 100),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100),
-            stackView.bottomAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.bottomAnchor, constant: -80)
+            stackViewFund.heightAnchor.constraint(equalToConstant: 100),
+            stackViewFund.widthAnchor.constraint(equalToConstant: 300),
+            stackViewFund.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackViewFund.bottomAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.bottomAnchor, constant: -80)
         ])
     }
     
     
     //MARK: - Spoon/Glass Images
+    
     
     private let imageSG: UIImageView = {
         let i = UIImage(named: "Spoon-glass.png")
@@ -231,17 +208,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }()
     
     
-    
     //MARK: - LabelCalc
+    
     
     private let labelCalc: UILabel = {
         let label = UILabel()
         label.text = "0.0x"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Helvetica-Light", size: 60)
+        label.font = UIFont(name: "Helvetica-Light", size: 50)
         label.textColor = .white
-        label.textAlignment = .center
+        label.textAlignment = .right
+
+        NSLayoutConstraint.activate([
+            label.heightAnchor.constraint(equalToConstant: 100),
+            label.widthAnchor.constraint(equalToConstant: 100)
+        ])
             return label
         }()
-
 }
